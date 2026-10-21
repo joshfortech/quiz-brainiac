@@ -100,6 +100,17 @@ a {
   color: #fff;
   white-space: nowrap;
   margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
 }
 
 .header-stats {
@@ -273,7 +284,6 @@ body.sidebar-collapsed .main {
   border-radius: var(--radius);
   padding: 34px 30px;
   margin-bottom: 26px;
-  text-align: center;
 }
 
 .hero h1 {
@@ -283,7 +293,7 @@ body.sidebar-collapsed .main {
 }
 
 .hero p {
-  margin: 0 auto;
+  margin: 0;
   color: var(--ink-soft);
   font-size: 1.1rem;
   max-width: 55ch;
@@ -293,7 +303,6 @@ body.sidebar-collapsed .main {
   font-size: 1.25rem;
   margin: 0 0 14px;
   color: var(--cerulean-deep);
-  text-align: center;
 }
 
 .stat-cards {
@@ -308,7 +317,6 @@ body.sidebar-collapsed .main {
   border: 2px solid var(--cerulean);
   border-radius: var(--radius);
   padding: 18px 20px;
-  text-align: center;
 }
 
 .stat-card .stat-name {
@@ -342,11 +350,9 @@ body.sidebar-collapsed .main {
   padding: 24px 22px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
   text-decoration: none;
   color: var(--ink);
-  text-align: center;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
@@ -373,7 +379,7 @@ body.sidebar-collapsed .main {
 
 .subject-card .card-cta {
   margin-top: 8px;
-  align-self: center;
+  align-self: flex-start;
 }
 
 /* ---------- Landing mascot image ---------- */
@@ -391,9 +397,7 @@ body.sidebar-collapsed .main {
 @media (min-width: 1000px) {
   .landing .hero,
   .landing .stat-cards {
-    max-width: min(720px, calc(100% - 500px));
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 58%;
   }
 
   .landing-mascot {
