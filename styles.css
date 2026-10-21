@@ -393,7 +393,8 @@ body.sidebar-collapsed .main {
     position: absolute;
     right: 0;
     bottom: 140px;
-    width: 38%;
+    height: 500px;
+    width: auto;
     display: block;
   }
 }
@@ -405,9 +406,8 @@ body.sidebar-collapsed .main {
 
   .landing-mascot {
     display: block;
-    width: min(78%, 340px);
-    max-height: 320px;
-    object-fit: contain;
+    height: 440px;
+    width: auto;
     margin: 14px auto -48px;
   }
 }
