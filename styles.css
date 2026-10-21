@@ -331,6 +331,8 @@ body.sidebar-collapsed .main {
 }
 
 .subject-card {
+  position: relative;
+  z-index: 1;
   background: var(--card);
   border: 2px solid var(--line);
   border-radius: var(--radius);
@@ -367,6 +369,47 @@ body.sidebar-collapsed .main {
 .subject-card .card-cta {
   margin-top: 8px;
   align-self: flex-start;
+}
+
+/* ---------- Landing mascot image ---------- */
+
+.subjects-section {
+  position: relative;
+}
+
+.landing-mascot {
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 1000px) {
+  .landing .hero,
+  .landing .stat-cards {
+    max-width: 58%;
+  }
+
+  .landing-mascot {
+    position: absolute;
+    right: 0;
+    bottom: 140px;
+    width: 38%;
+    display: block;
+  }
+}
+
+@media (max-width: 999px) {
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-mascot {
+    display: block;
+    width: min(78%, 340px);
+    max-height: 320px;
+    object-fit: contain;
+    margin: 14px auto -48px;
+  }
 }
 
 /* ---------- Subject / lesson page ---------- */
