@@ -269,7 +269,9 @@
     currentVideoId = document.body.getAttribute('data-video-id');
 
     if (isLocalFile()) {
-      window.location.replace(SITE_URL);
+      var page = decodeURIComponent(String(window.location.pathname || '').split('/').pop() || '');
+      if (!/\.html$/i.test(page)) page = 'index.html';
+      window.location.replace(SITE_URL + page);
       return;
     }
 
