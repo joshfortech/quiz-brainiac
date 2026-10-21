@@ -4,6 +4,7 @@
   var START_KEY = 'qb_session_start';
   var WATCHED_COUNT_KEY = 'qb_videos_watched';
   var WATCHED_IDS_KEY = 'qb_watched_video_ids';
+  var SITE_URL = 'https://joshfortech.github.io/quiz-brainiac/';
 
   var playerApiReady = false;
   var playerErrored = false;
@@ -154,11 +155,8 @@
 
     if (isLocalFile()) {
       html +=
-        '<p class="fallback-hint"><strong>Easiest fix:</strong> close this tab and double-click ' +
-        '<code>Start Quiz Brainiac.bat</code> in this folder - it starts a local server and opens the site ' +
-        'with working videos. Or do it manually: run <code>python -m http.server 8000</code> ' +
-        '(or <code>py -m http.server 8000</code>) in this folder, then open ' +
-        '<code>http://localhost:8000</code>.</p>';
+        '<p class="fallback-hint">Open the online version of the site instead: ' +
+        '<a href="' + SITE_URL + '">' + SITE_URL + '</a> - videos work there.</p>';
     } else {
       html += '<p class="fallback-hint">If it still does not play, refresh the page or check your internet connection.</p>';
     }
@@ -268,7 +266,13 @@
     initNavButtons();
     initQuizReveal();
 
-    var videoId = document.body.getAttribute('data-video-id');
-    if (videoId) initLessonPlayer(videoId);
+    currentVideoId = document.body.getAttribute('data-video-id');
+
+    if (isLocalFile()) {
+      window.location.replace(SITE_URL);
+      return;
+    }
+
+    if (currentVideoId) initLessonPlayer(currentVideoId);
   });
 })();
