@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Brainiac — Fun Learning for Kids</title>
+  <meta name="description" content="Quiz Brainiac: watch short lesson videos and take fun quizzes in Basic Science and History.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sidebar-collapsed" data-page="home">
+
+  <header class="site-header">
+    <button class="header-btn" data-action="toggle-sidebar" aria-label="Toggle menu" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+    <button class="header-btn" data-action="go-back" aria-label="Go back">&#8592;</button>
+    <button class="header-btn" data-action="go-forward" aria-label="Go forward">&#8594;</button>
+    <a class="logo" href="index.html">&#129504; <span class="logo-text">Quiz Brainiac</span></a>
+    <div class="header-stats">
+      <span class="stat-pill"><span class="stat-label">Time: </span><strong data-stat="time">00:00:00</strong></span>
+      <span class="stat-pill"><span class="stat-label">Videos watched: </span><strong data-stat="videos">0</strong></span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <p class="sidebar-label">Menu</p>
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html" data-nav="home">
+          <span class="nav-icon">&#127968;</span><span class="nav-text">Home</span>
+        </a>
+        <a class="nav-link" href="basic-science.html" data-nav="science">
+          <span class="nav-icon">&#128300;</span><span class="nav-text">Basic Science</span>
+        </a>
+        <a class="nav-link" href="history.html" data-nav="history">
+          <span class="nav-icon">&#128214;</span><span class="nav-text">History</span>
+        </a>
+      </nav>
+    </aside>
+    <div class="sidebar-overlay"></div>
+
+    <main class="main">
+      <section class="hero">
+        <h1>Welcome to Quiz Brainiac!</h1>
+        <p>Watch a fun lesson video, then prove what you learned with a quick quiz. Pick a subject from the menu or a card below to get started.</p>
+      </section>
+
+      <section aria-labelledby="stats-heading">
+        <h2 class="section-title" id="stats-heading">Your visit so far</h2>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <p class="stat-name">Time on platform</p>
+            <p class="stat-value" data-stat="time">00:00:00</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-name">Videos watched</p>
+            <p class="stat-value" data-stat="videos">0</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="subjects-heading">
+        <h2 class="section-title" id="subjects-heading">Choose a subject</h2>
+        <div class="subject-grid">
+          <a class="subject-card" href="basic-science.html">
+            <span class="subject-emoji">&#128300;</span>
+            <h3>Basic Science</h3>
+            <p>Watch a short science video, then answer 3 quick questions.</p>
+            <span class="btn btn-primary card-cta">Start learning</span>
+          </a>
+          <a class="subject-card" href="history.html">
+            <span class="subject-emoji">&#128214;</span>
+            <h3>History</h3>
+            <p>Travel back in time with a video, then test what you remember.</p>
+            <span class="btn btn-primary card-cta">Start learning</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
